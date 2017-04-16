@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Budget Page</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+				<h1 class="text-center">Budget</h1>
+			</div>
+			<div class="col-md-4 col-md-offset-4">
+				<h2 class="text-center">Pay</h2>
+				<form id="budgetData1" name="budgetData1">
+				   <div class="form-group">
+				     <label for="month">Current Month</label>
+				     <input type="text" class="form-control" id="month" name="month" placeholder="Current Month">
+				   </div>
+					<div class="form-group">
+					  <label for="payFrequency">How many Times are you getting paid this month</label>
+					  <input type="number" class="form-control" id="payFrequency" name="payFrequency" data-key="payFrequency" placeholder="times per month">
+					</div>
+					<div class="form-group">
+					  <label for="takeHome">Current Take Home Pay</label>
+					  <input type="number" class="form-control" id="takeHome" name="takeHome" data-key="takeHome" placeholder="After Taxes">
+					</div>
+				  
+				  <button type="submit" id="budgetData1Button" class="btn btn-default">Submit</button>
+				</form>
+			</div>
+		</div>
+
+		<div class="row">
+			
+			<div class="col-md-4 col-md-offset-4">
+				<h2 class="text-center">Food</h2>
+				<form id="budgetData2" name="budgetData2">
+					<div class="form-group">
+					  <label for="groceries">Groceries</label>
+					  <input type="number" class="form-control" id="groceries" name="groceries" placeholder="For the month">
+					</div>
+					<div class="form-group">
+					  <label for="restaurants">Restaurants</label>
+					  <input type="number" class="form-control" id="restaurants" name="restaurants" placeholder="For the month">
+					</div>
+				  
+				  <button type="submit" id="budgetData2Button" class="btn btn-default">Submit</button>
+				</form>
+			</div>
+		</div> <!-- row div -->
+
+
+		<div class="row">
+			
+			<div class="col-md-4 col-md-offset-4">
+				<h2 class="text-center">Utilities</h2>
+				<form id="budgetData4">
+					<div class="form-group">
+					  <label for="electricity">Electricity</label>
+					  <input type="number" class="form-control" id="electricity" placeholder="For the month">
+					</div>
+					<div class="form-group">
+					  <label for="phoneMobile">Phone Mobile</label>
+					  <input type="number" class="form-control" id="phoneMobile" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="gas">Gas</label>
+					  <input type="number" class="form-control" id="gas" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="trash">Trash</label>
+					  <input type="number" class="form-control" id="trash" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="water">Water</label>
+					  <input type="number" class="form-control" id="water" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="internet">Internet</label>
+					  <input type="number" class="form-control" id="internet" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="cable">Cable</label>
+					  <input type="number" class="form-control" id="cable" placeholder="For the Month">
+					</div>
+
+				  
+				  <button type="submit" class="btn btn-default">Submit</button>
+				</form>
+			</div>
+		</div> <!-- row div -->
+
+		<div class="row">
+
+			<div class="col-md-4 col-md-offset-4">
+				<h2 class="text-center">Housing</h2>
+				<form id="budgetData5">
+					<div class="form-group">
+					  <label for="mortgageRent">First Mortgage/Rent</label>
+					  <input type="number" class="form-control" id="mortgageRent" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="secondMortgage">Second Mortgage</label>
+					  <input type="number" class="form-control" id="secondMortgage" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="taxes">Real Estate Taxes</label>
+					  <input type="number" class="form-control" id="taxes" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="repairsMaint">Repairs/Maint.</label>
+					  <input type="number" class="form-control" id="repairsMaint." placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="dues">Association Dues</label>
+					  <input type="number" class="form-control" id="dues" placeholder="For the Month">
+					</div>
+
+				  <button type="submit" class="btn btn-default">Submit</button>
+				</form>
+			</div>
+		</div> <!-- row div -->
+
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+				<h2 class="text-center">Clothing</h2>
+				<form id="budgetData6">
+					<div class="form-group">
+					  <label for="clothingAdults">Adults</label>
+					  <input type="number" class="form-control" id="clothingAdults" placeholder="For the month">
+					</div>
+					<div class="form-group">
+					  <label for="clothingKids">Kids</label>
+					  <input type="number" class="form-control" id="clothingKids" placeholder="For the month">
+					</div>
+					<div class="form-group">
+					  <label for="clothingCleaning">Dry Cleaning/Laundry</label>
+					  <input type="number" class="form-control" id="clothingCleaning" placeholder="For the month">
+					</div>
+				  
+				  <button type="submit" class="btn btn-default">Submit</button>
+				</form>
+			</div>
+		</div> <!-- row div -->
+
+		<div class="row">
+
+			<div class="col-md-4 col-md-offset-4">
+				<h2 class="text-center">Transportation</h2>
+				<form id="budgetData7">
+					<div class="form-group">
+					  <label for="carGas">Car Gas</label>
+					  <input type="number" class="form-control" id="carGas" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="repairs">Repairs</label>
+					  <input type="number" class="form-control" id="repairs" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="newCarFund">New Car Fund</label>
+					  <input type="number" class="form-control" id="newCarFund" placeholder="For the Month">
+					</div>
+
+				  <button type="submit" class="btn btn-default">Submit</button>
+				</form>
+			</div>
+		</div> <!-- row div -->
+
+
+		<div class="row">
+
+			<div class="col-md-4 col-md-offset-4">
+				<h2 class="text-center">Medical/Health</h2>
+				<form id="budgetData8">
+					<div class="form-group">
+					  <label for="medications">Medications</label>
+					  <input type="number" class="form-control" id="medications" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="doctorBills">Doctor Bills</label>
+					  <input type="number" class="form-control" id="doctorBills" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="otherMedical">Other Medical</label>
+					  <input type="number" class="form-control" id="otherMedical" placeholder="For the Month">
+					</div>
+
+				  <button type="submit" class="btn btn-default">Submit</button>
+				</form>
+			</div>
+		</div> <!-- row div -->
+
+		<div class="row">
+
+			<div class="col-md-4 col-md-offset-4">
+				<h2 class="text-center">Insurance</h2>
+				<form id="budgetData9">
+					<div class="form-group">
+					  <label for="lifeInsurance">Life Insurance</label>
+					  <input type="number" class="form-control" id="lifeInsurance" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="healthInsurance">Health Insurance</label>
+					  <input type="number" class="form-control" id="healthInsurance" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="autoInsurance">Auto Insurance</label>
+					  <input type="number" class="form-control" id="autoInsurance" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="homeownerRenterInsurance">Homeowner/Renter Insurance</label>
+					  <input type="number" class="form-control" id="homeownerRenterInsurance" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="disabilityInsurance">Disability Insurance</label>
+					  <input type="number" class="form-control" id="disabilityInsurance" placeholder="For the Month">
+					</div>
+
+				  <button type="submit" class="btn btn-default">Submit</button>
+				</form>
+			</div>
+		</div> <!-- row div -->
+
+		<div class="row">
+
+			<div class="col-md-4 col-md-offset-4">
+				<h2 class="text-center">Personal</h2>
+				<form id="budgetData10">
+					<div class="form-group">
+					  <label for="childCare">Child Care</label>
+					  <input type="number" class="form-control" id="childCare" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="toiletries">Toiletries</label>
+					  <input type="number" class="form-control" id="toiletries" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="cosmeticsHair">Cosmetics/Hair Care</label>
+					  <input type="number" class="form-control" id="cosmeticsHair" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="education">Education/Tuition</label>
+					  <input type="number" class="form-control" id="education" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="booksSupplies">Book/Supplies</label>
+					  <input type="number" class="form-control" id="booksSupplies" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="childSupport">Child Support</label>
+					  <input type="number" class="form-control" id="childSupport" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="alimony">Alimony</label>
+					  <input type="number" class="form-control" id="alimony" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="subscriptions">Subscriptions</label>
+					  <input type="number" class="form-control" id="subscriptions" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="pocketMoney">Organization Dues</label>
+					  <input type="number" class="form-control" id="organizationDues" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="pocketMoney">Pocket Money</label>
+					  <input type="number" class="form-control" id="pocketMoney" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="babySupplies">Baby Supplies</label>
+					  <input type="number" class="form-control" id="babySupplies" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="petSupplies">Pet Supplies</label>
+					  <input type="number" class="form-control" id="petSupplies" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="miscellaneous">Miscellaneous</label>
+					  <input type="number" class="form-control" id="miscellaneous" placeholder="For the Month">
+					</div>
+					<div class="form-group">
+					  <label for="otherPersonal">Other</label>
+					  <input type="number" class="form-control" id="otherPersonal" placeholder="For the Month">
+					</div>
+				  <button type="submit" class="btn btn-default">Submit</button>
+				</form>
+			</div>
+		</div> <!-- row div -->
+
+				<div class="col-md-4 col-md-offset-4">
+					<h2 class="text-center">DEBT</h2>
+					<form id="budgetData11">
+						<div class="form-group">
+						  <label for="carPayment1">Car Payment 1</label>
+						  <input type="number" class="form-control" id="carPayment1" placeholder="For the Month">
+						</div>
+						<div class="form-group">
+						  <label for="carPayment2">Car Payment 2</label>
+						  <input type="number" class="form-control" id="carPayment2" placeholder="For the Month">
+						</div>
+						<div class="form-group">
+						  <label for="Credit Card 1">Credit Card 1</label>
+						  <input type="number" class="form-control" id="Credit Card 1" placeholder="For the Month">
+						</div>
+						<div class="form-group">
+						  <label for="creditCard2">Credit Card 2</label>
+						  <input type="number" class="form-control" id="creditCard2" placeholder="For the Month">
+						</div>
+						<div class="form-group">
+						  <label for="creditCard3">Credit Card 3</label>
+						  <input type="number" class="form-control" id="creditCard3" placeholder="For the Month">
+						</div>
+						<div class="form-group">
+						  <label for="creditCard4">Credit Card 4</label>
+						  <input type="number" class="form-control" id="creditCard4" placeholder="For the Month">
+						</div>
+						<div class="form-group">
+						  <label for="creditCard5">Credit Card 5</label>
+						  <input type="number" class="form-control" id="creditCard5" placeholder="For the Month">
+						</div>
+						<div class="form-group">
+						  <label for="studentLoan1">Student Loan 1</label>
+						  <input type="number" class="form-control" id="studentLoan1" placeholder="For the Month">
+						</div>
+						<div class="form-group">
+						  <label for="studentLoan2">Student Loan 2</label>
+						  <input type="number" class="form-control" id="studentLoan2" placeholder="For the Month">
+						</div>
+						<div class="form-group">
+						  <label for="studentLoan3">Student Loan 3</label>
+						  <input type="number" class="form-control" id="studentLoan3" placeholder="For the Month">
+						</div>
+						<div class="form-group">
+						  <label for="studentLoan4">Student Loan 4</label>
+						  <input type="number" class="form-control" id="studentLoan4" placeholder="For the Month">
+						</div>
+						<div class="form-group">
+						  <label for="otherDebt1">Other Debt</label>
+						  <input type="number" class="form-control" id="otherDebt1" placeholder="For the Month">
+						</div>
+						<div class="form-group">
+						  <label for="otherDebt2">Other Debt</label>
+						  <input type="number" class="form-control" id="otherDebt2" placeholder="For the Month">
+						</div>
+						<div class="form-group">
+						  <label for="otherDebt3">Other Debt</label>
+						  <input type="number" class="form-control" id="otherDebt3" placeholder="For the Month">
+						</div>
+						<div class="form-group">
+						  <label for="otherDebt4">Other Debt</label>
+						  <input type="number" class="form-control" id="otherDebt4" placeholder="For the Month">
+						</div>	
+						<div class="form-group">
+						  <label for="otherDebt5">Other Debt</label>
+						  <input type="number" class="form-control" id="otherDebt5" placeholder="For the Month">
+						</div>						
+					  <button type="submit" class="btn btn-default">Submit</button>
+					</form>
+				</div>
+			</div> <!-- row div -->
+
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4">
+					<h2 class="text-center">Results</h2>
+					<div id="results1"></div>
+			</div>
+
+	</div> <!-- container div -->
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript" src="budget.js"></script>
+</body>
+</html>
