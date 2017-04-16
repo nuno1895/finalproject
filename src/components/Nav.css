@@ -1,5 +1,6 @@
 nav {
 	float : left;
+	text-decoration: none;
 
 }
 
@@ -10,5 +11,5 @@ nav {
 }
 
 nav a {
-	margin-right: 2%;
+	margin-right: 3.5%;
 }

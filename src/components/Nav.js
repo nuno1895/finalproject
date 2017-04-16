@@ -9,8 +9,9 @@ class Nav extends Component {
     return (
       <div className="navBar">
         <nav>
-          <NavLink exact to="/">HOME -</NavLink>
+          <NavLink exact to="/">HOME</NavLink>
           <NavLink to="/name">NAME</NavLink>
+          <NavLink to="/results">RESULTS</NavLink>
         </nav> 
       </div>
     );
