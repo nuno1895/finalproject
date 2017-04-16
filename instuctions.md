@@ -90,6 +90,6 @@ Debt calculator that will give you a payment plan for the reminder of your debt 
 
 React:
 
-All the forms are going to be compentants and all will have steps
+All the forms are going to be components and all will have steps
 
 use steps and all items in state, if step one is true then show form 1 then once that turns false the step 2 and form 2 shows 
