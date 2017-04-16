@@ -81,7 +81,29 @@ class MainForm extends Component {
          otherPersonal:'',
          otherPersonal1:'',
          otherPersonal2:''
-
+       },
+        entertainment: {
+         entertainment: "",
+         vacation:""
+       },
+         debt: {
+         carPayment1:'',
+         carPayment2:'',
+         creditCard1:'',
+         creditCard2:'',
+         creditCard3:'',
+         creditCard4:'',
+         creditCard5:'',
+         creditCard6:'',
+         studentLoan1:'',
+         studentLoan2:'',
+         studentLoan3:'',
+         studentLoan4: '',
+         debt1:'',
+         debt2:'',
+         debt3:'',
+         debt4:'',
+         debt5:''
        },
         section: "pay",
         section: "food",
@@ -92,7 +114,9 @@ class MainForm extends Component {
         section: "medical",
         section: "insurance",
         section: "transportation",
-        section: "personal"
+        section: "personal",
+        section: "entertainment",
+        section: "debt"
     };
 
     // binding our methods which get passed as callbacks
@@ -298,7 +322,7 @@ class MainForm extends Component {
           <br />
           <br />
           <button onClick={() => this.setState({section: "savings"})}>Back </button>
-          <button onClick={() => this.setState({section: "Insurance"})}>Next</button>
+          <button onClick={() => this.setState({section: "insurance"})}>Next</button>
       </div>
     );
   }
@@ -444,6 +468,99 @@ class MainForm extends Component {
     );
   }
 
+  renderEntertainment() {
+    return (
+      <div>
+        <h1> Entertainment </h1>
+          <br />
+          <label>Entertainment:</label>
+          <Input onChange={(event) => this.handleInputChange(event, "entertainment", "groceries") } value={this.state.entertainment.groceries}  />
+          <br />
+          <br />
+          <label>Vacation:</label>
+          <Input onChange={(event) => this.handleInputChange(event, "entertainment", "vacation") } value={this.state.entertainment.vacation}  />
+          <br />
+          <br />
+          <button onClick={() => this.setState({section: "personal"})}>Back </button>
+          <button onClick={() => this.setState({section: "debt"})}>Next</button>
+      </div>
+    );
+  }
+
+  renderDebt() {
+    return (
+      <div>
+        <h1> Debt </h1>
+          <br />
+          <label>Car Payment #1:</label>
+          <Input onChange={(event) => this.handleInputChange(event, "debt", "carPayment1") } value={this.state.debt.carPayment1}  />
+          <br />
+          <br />
+          <label>Car Payment #2:</label>
+          <Input onChange={(event) => this.handleInputChange(event, "debt", "carPayment2") } value={this.state.debt.carPayment2}  />
+          <br />
+          <br />
+          <label>Credit Card #1:</label>
+          <Input onChange={(event) => this.handleInputChange(event, "debt", "creditCard1") } value={this.state.debt.creditCard1}  />
+          <br />
+          <br />
+          <label>Credit Card #2:</label>
+          <Input onChange={(event) => this.handleInputChange(event, "debt", "creditCard2") } value={this.state.debt.creditCard2}  />
+          <br />
+          <br />
+          <label>Credit Card #3:</label>
+          <Input onChange={(event) => this.handleInputChange(event, "debt", "creditCard3") } value={this.state.debt.creditCard3}  />
+          <br />
+          <br />
+          <label>Credit Card #4:</label>
+          <Input onChange={(event) => this.handleInputChange(event, "debt", "creditCard4") } value={this.state.debt.creditCard4}  />
+          <br />
+          <br />
+          <label>Credit Card #5:</label>
+          <Input onChange={(event) => this.handleInputChange(event, "debt", "creditCard5") } value={this.state.debt.creditCard5}  />
+          <br />
+          <br />
+          <label>Credit Card #6:</label>
+          <Input onChange={(event) => this.handleInputChange(event, "debt", "creditCard6") } value={this.state.debt.creditCard6}  />
+          <br />
+          <br />
+          <label>Student Loan #1:</label>
+          <Input onChange={(event) => this.handleInputChange(event, "debt", "studentLoan1") } value={this.state.debt.studentLoan1}  />
+          <br />
+          <br />
+          <label>Student Loan #2:</label>
+          <Input onChange={(event) => this.handleInputChange(event, "debt", "studentLoan2") } value={this.state.debt.studentLoan2}  />
+          <br />
+          <br />
+          <label>Student Loan #3:</label>
+          <Input onChange={(event) => this.handleInputChange(event, "debt", "studentLoan3") } value={this.state.debt.studentLoan3}  />
+          <br />
+          <br />
+          <label>Student Loan #4:</label>
+          <Input onChange={(event) => this.handleInputChange(event, "debt", "studentLoan4") } value={this.state.debt.studentLoan4}  />
+          <br />
+          <br />
+          <label>Miscellaneous Debt #1:</label>
+          <Input onChange={(event) => this.handleInputChange(event, "debt", "debt1") } value={this.state.debt.debt1}  />
+          <br />
+          <br />
+          <label>Miscellaneous Debt #2:</label>
+          <Input onChange={(event) => this.handleInputChange(event, "debt", "debt2") } value={this.state.debt.debt2}  />
+          <br />
+          <br />
+          <label>Miscellaneous Debt #3:</label>
+          <Input onChange={(event) => this.handleInputChange(event, "debt", "debt3") } value={this.state.debt.debt3}  />
+          <br />
+          <br />
+          <label>Miscellaneous Debt #4:</label>
+          <Input onChange={(event) => this.handleInputChange(event, "debt", "debt4") } value={this.state.debt.debt4}  />
+          <br />
+          <br />
+          <button onClick={() => this.setState({section: "entertainment"})}>Back </button>
+          <button onClick= {() => alert("Done!")}>Grade My Budget</button>
+      </div>
+    );
+  }
 
 
   renderForm() {
@@ -477,6 +594,13 @@ class MainForm extends Component {
     else if(this.state.section === "personal"){
       return this.renderPersonal();
     }
+     else if(this.state.section === "entertainment"){
+      return this.renderEntertainment();
+    }
+    else if(this.state.section === "debt"){
+      return this.renderDebt();
+    }else
+      return this.renderPay();
   }
 
   // renderForm decides what parts of the form to render
