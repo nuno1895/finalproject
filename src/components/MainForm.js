@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Input from './Input';
+import Results from './Results';
 
 class MainForm extends Component {
   constructor() {
@@ -7,13 +8,13 @@ class MainForm extends Component {
     // Creating a giant state object to hold all of our form data
     this.state = {
       pay: {
-        month: "",
-        takeHome: "",
-        frequency: ""
+        month: '',
+        takeHome: '',
+        frequency: ''
       },
        food: {
-        groceries: "",
-        eatingOut: ""
+        groceries: '',
+        eatingOut: ''
       },
        clothing: {
          clothingAdult: '',
@@ -83,8 +84,8 @@ class MainForm extends Component {
          otherPersonal2:''
        },
         entertainment: {
-         entertainment: "",
-         vacation:""
+         entertainment: '',
+         vacation:''
        },
          debt: {
          carPayment1:'',
@@ -105,18 +106,7 @@ class MainForm extends Component {
          debt4:'',
          debt5:''
        },
-        section: "pay",
-        section: "food",
-        section: "clothing",
-        section: "utilities",
-        section: "housing",
-        section: "savings",
-        section: "medical",
-        section: "insurance",
-        section: "transportation",
-        section: "personal",
-        section: "entertainment",
-        section: "debt"
+        section: 'pay'
     };
 
     // binding our methods which get passed as callbacks
@@ -132,7 +122,7 @@ class MainForm extends Component {
   }
   
   getSalary() {
-    console.log("Your salary is" + this.state.pay.frequency * this.state.pay.takeHome);
+    console.log('Your salary is' + this.state.pay.frequency * this.state.pay.takeHome);
   }
 
   renderPay() {
@@ -141,18 +131,18 @@ class MainForm extends Component {
       <h1> Your Pay </h1>
         <br />
         <label>Current Month:</label>
-        <Input onChange={(event) => this.handleInputChange(event, "pay", "month") } value={this.state.pay.month}  />
+        <Input onChange={(event) => this.handleInputChange(event, 'pay', 'month') } value={this.state.pay.month}  />
         <br />
         <br />
         <label>Weekly Take Home:</label>
-        <Input onChange={(event) => this.handleInputChange(event, "pay", "takeHome") } value={this.state.pay.takeHome}  />
+        <Input onChange={(event) => this.handleInputChange(event, 'pay', 'takeHome') } value={this.state.pay.takeHome}  />
         <br />
         <br />
         <label>How Often do you get payed every Month:</label>
-        <Input onChange={(event) => this.handleInputChange(event, "pay", "frequency") } value={this.state.pay.frequency}  />
+        <Input onChange={(event) => this.handleInputChange(event, 'pay', 'frequency') } value={this.state.pay.frequency}  />
         <br />
         <br />
-        <button onClick={() => this.setState({section: "food"})}>Next</button>
+        <button onClick={() => this.setState({section: 'food'})}>Next</button>
       </div>
     );
   }
@@ -163,15 +153,15 @@ class MainForm extends Component {
         <h1> Food </h1>
           <br />
           <label>Groceries:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "food", "groceries") } value={this.state.food.groceries}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'food', 'groceries') } value={this.state.food.groceries}  />
           <br />
           <br />
           <label>Eating Out:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "food", "eatingOut") } value={this.state.food.eatingOut}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'food', 'eatingOut') } value={this.state.food.eatingOut}  />
           <br />
           <br />
-          <button onClick={() => this.setState({section: "pay"})}>Back </button>
-          <button onClick={() => this.setState({section: "clothing"})}>Next</button>
+          <button onClick={() => this.setState({section: 'pay'})}>Back </button>
+          <button onClick={() => this.setState({section: 'clothing'})}>Next</button>
       </div>
     );
   }
@@ -182,19 +172,19 @@ class MainForm extends Component {
         <h1> Clothing </h1>
           <br />
           <label>Clothes For Adult:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "clothing", "clothingAdult") } value={this.state.clothing.clothingAdult}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'clothing', 'clothingAdult') } value={this.state.clothing.clothingAdult}  />
           <br />
           <br />
           <label>Clothing For Kids:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "clothing", "clothingKids") } value={this.state.clothing.clothingKids}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'clothing', 'clothingKids') } value={this.state.clothing.clothingKids}  />
           <br />
           <br />
           <label>Laundry/Dry Clothing:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "clothing", "dryCleaning") } value={this.state.clothing.dryCleaning}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'clothing', 'dryCleaning') } value={this.state.clothing.dryCleaning}  />
           <br />
           <br />
-          <button onClick={() => this.setState({section: "food"})}>Back </button>
-          <button onClick={() => this.setState({section: "utilities"})}>Next</button>
+          <button onClick={() => this.setState({section: 'food'})}>Back </button>
+          <button onClick={() => this.setState({section: 'utilities'})}>Next</button>
       </div>
     );
   }
@@ -205,35 +195,35 @@ class MainForm extends Component {
         <h1> Utilities </h1>
           <br />
           <label>Electricity:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "utilities", "electricity") } value={this.state.utilities.electricity}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'utilities', 'electricity') } value={this.state.utilities.electricity}  />
           <br />
           <br />
           <label>Mobile Phone:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "utilities", "mobilePhone") } value={this.state.utilities.mobilePhone}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'utilities', 'mobilePhone') } value={this.state.utilities.mobilePhone}  />
           <br />
           <br />
           <label>Gas:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "utilities", "gas") } value={this.state.utilities.gas}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'utilities', 'gas') } value={this.state.utilities.gas}  />
           <br />
           <br />
           <label>Trash:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "utilities", "trash") } value={this.state.utilities.trash}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'utilities', 'trash') } value={this.state.utilities.trash}  />
           <br />
           <br />
           <label>Water:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "utilities", "water") } value={this.state.utilities.water}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'utilities', 'water') } value={this.state.utilities.water}  />
           <br />
           <br />
           <label>Internet:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "utilities", "internet") } value={this.state.utilities.internet}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'utilities', 'internet') } value={this.state.utilities.internet}  />
           <br />
           <br />
           <label>Cable:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "utilities", "cable") } value={this.state.utilities.cable}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'utilities', 'cable') } value={this.state.utilities.cable}  />
           <br />
           <br />
-          <button onClick={() => this.setState({section: "clothing"})}>Back </button>
-          <button onClick={() => this.setState({section: "housing"})}>Next</button>
+          <button onClick={() => this.setState({section: 'clothing'})}>Back </button>
+          <button onClick={() => this.setState({section: 'housing'})}>Next</button>
       </div>
     );
   }
@@ -244,27 +234,27 @@ class MainForm extends Component {
         <h1> Housing </h1>
           <br />
           <label>Mortgage or Rent:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "housing", "mortgageRent") } value={this.state.housing.mortgageRent}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'housing', 'mortgageRent') } value={this.state.housing.mortgageRent}  />
           <br />
           <br />
           <label>Second Mortgage:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "housing", "secondMortgage") } value={this.state.housing.secondMortgage}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'housing', 'secondMortgage') } value={this.state.housing.secondMortgage}  />
           <br />
           <br />
           <label>Taxes:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "housing", "taxes") } value={this.state.housing.taxes}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'housing', 'taxes') } value={this.state.housing.taxes}  />
           <br />
           <br />
           <label>Repairs & Maintance:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "housing", "repairsMaint") } value={this.state.housing.repairsMaint}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'housing', 'repairsMaint') } value={this.state.housing.repairsMaint}  />
           <br />
           <br />
           <label>Housing Dues or Maintance Fees:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "housing", "dues") } value={this.state.housing.dues}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'housing', 'dues') } value={this.state.housing.dues}  />
           <br />
           <br />
-          <button onClick={() => this.setState({section: "utilities"})}>Back </button>
-          <button onClick={() => this.setState({section: "savings"})}>Next</button>
+          <button onClick={() => this.setState({section: 'utilities'})}>Back </button>
+          <button onClick={() => this.setState({section: 'savings'})}>Next</button>
       </div>
     );
   }
@@ -275,19 +265,19 @@ class MainForm extends Component {
         <h1> Saving </h1>
           <br />
           <label>Emergency Savings:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "savings", "emergency") } value={this.state.savings.emergency}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'savings', 'emergency') } value={this.state.savings.emergency}  />
           <br />
           <br />
           <label>Retirement:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "savings", "retirement") } value={this.state.savings.retirement}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'savings', 'retirement') } value={this.state.savings.retirement}  />
           <br />
           <br />
           <label>College:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "savings", "college") } value={this.state.savings.college}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'savings', 'college') } value={this.state.savings.college}  />
           <br />
           <br />
-          <button onClick={() => this.setState({section: "housing"})}>Back </button>
-          <button onClick={() => this.setState({section: "medical"})}>Next</button>
+          <button onClick={() => this.setState({section: 'housing'})}>Back </button>
+          <button onClick={() => this.setState({section: 'medical'})}>Next</button>
       </div>
     );
   }
@@ -298,31 +288,31 @@ class MainForm extends Component {
         <h1> Medical </h1>
           <br />
           <label>Medications:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "medical", "medications") } value={this.state.medical.medications}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'medical', 'medications') } value={this.state.medical.medications}  />
           <br />
           <br />
           <label>Doctor Bills:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "medical", "doctorBills") } value={this.state.medical.doctorBills}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'medical', 'doctorBills') } value={this.state.medical.doctorBills}  />
           <br />
           <br />
           <label>Hospital Bills:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "medical", "hospitalBills") } value={this.state.medical.hospitalBills}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'medical', 'hospitalBills') } value={this.state.medical.hospitalBills}  />
           <br />
           <br />
           <label>Other Medical:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "medical", "otherMedical") } value={this.state.medical.otherMedical}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'medical', 'otherMedical') } value={this.state.medical.otherMedical}  />
           <br />
           <br />
           <label>Other Medical:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "medical", "otherMedical2") } value={this.state.medical.otherMedical2}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'medical', 'otherMedical2') } value={this.state.medical.otherMedical2}  />
           <br />
           <br />
           <label>Other Medical:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "medical", "otherMedical3") } value={this.state.medical.otherMedical3}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'medical', 'otherMedical3') } value={this.state.medical.otherMedical3}  />
           <br />
           <br />
-          <button onClick={() => this.setState({section: "savings"})}>Back </button>
-          <button onClick={() => this.setState({section: "insurance"})}>Next</button>
+          <button onClick={() => this.setState({section: 'savings'})}>Back </button>
+          <button onClick={() => this.setState({section: 'insurance'})}>Next</button>
       </div>
     );
   }
@@ -333,31 +323,31 @@ class MainForm extends Component {
         <h1> Insurance </h1>
           <br />
           <label>Life Insurance:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "insurance", "lifeInsurance") } value={this.state.insurance.lifeInsurance}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'insurance', 'lifeInsurance') } value={this.state.insurance.lifeInsurance}  />
           <br />
           <br />
           <label>Health Insurance:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "insurance", "healthInsurance") } value={this.state.insurance.healthInsurance}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'insurance', 'healthInsurance') } value={this.state.insurance.healthInsurance}  />
           <br />
           <br />
           <label>Auto Insurance:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "insurance", "autoInsurance") } value={this.state.insurance.autoInsurance}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'insurance', 'autoInsurance') } value={this.state.insurance.autoInsurance}  />
           <br />
           <br />
           <label>Home or Rental Insurance:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "insurance", "homeRentalInsurance") } value={this.state.insurance.homeRentalInsurance}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'insurance', 'homeRentalInsurance') } value={this.state.insurance.homeRentalInsurance}  />
           <br />
           <br />
           <label>Disability Insurance:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "insurance", "disabilityInsurance") } value={this.state.insurance.disabilityInsurance}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'insurance', 'disabilityInsurance') } value={this.state.insurance.disabilityInsurance}  />
           <br />
           <br />
           <label>Long Term Insurance:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "insurance", "longTermInsurance") } value={this.state.insurance.longTermInsurance}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'insurance', 'longTermInsurance') } value={this.state.insurance.longTermInsurance}  />
           <br />
           <br />
-          <button onClick={() => this.setState({section: "medical"})}>Back </button>
-          <button onClick={() => this.setState({section: "transportation"})}>Next</button>
+          <button onClick={() => this.setState({section: 'medical'})}>Back </button>
+          <button onClick={() => this.setState({section: 'transportation'})}>Next</button>
       </div>
     );
   }
@@ -368,31 +358,31 @@ class MainForm extends Component {
         <h1> Transportation </h1>
           <br />
           <label>Gas for Car:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "transportation", "carGas") } value={this.state.transportation.carGas}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'transportation', 'carGas') } value={this.state.transportation.carGas}  />
           <br />
           <br />
           <label>Car Repairs:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "transportation", "carRepairs") } value={this.state.transportation.carRepairs}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'transportation', 'carRepairs') } value={this.state.transportation.carRepairs}  />
           <br />
           <br />
           <label>Bus:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "transportation", "bus") } value={this.state.transportation.bus}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'transportation', 'bus') } value={this.state.transportation.bus}  />
           <br />
           <br />
           <label>Train:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "transportation", "train") } value={this.state.transportation.train}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'transportation', 'train') } value={this.state.transportation.train}  />
           <br />
           <br />
           <label>New Car Fund:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "transportation", "newCarFund") } value={this.state.transportation.newCarFund}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'transportation', 'newCarFund') } value={this.state.transportation.newCarFund}  />
           <br />
           <br />
           <label>Other Transportation:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "transportation", "othertransportation") } value={this.state.transportation.othertransportation}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'transportation', 'othertransportation') } value={this.state.transportation.othertransportation}  />
           <br />
           <br />
-          <button onClick={() => this.setState({section: "insurance"})}>Back </button>
-          <button onClick={() => this.setState({section: "personal"})}>Next</button>
+          <button onClick={() => this.setState({section: 'insurance'})}>Back </button>
+          <button onClick={() => this.setState({section: 'personal'})}>Next</button>
       </div>
     );
   }
@@ -403,67 +393,67 @@ class MainForm extends Component {
         <h1> Personal </h1>
           <br />
           <label>Tution & Eduction:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "personal", "educationTution") } value={this.state.personal.educationTution}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'personal', 'educationTution') } value={this.state.personal.educationTution}  />
           <br />
           <br />
           <label>Child Care:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "personal", "childCare") } value={this.state.personal.childCare}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'personal', 'childCare') } value={this.state.personal.childCare}  />
           <br />
           <br />
           <label>Toiletries:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "personal", "toiletries") } value={this.state.personal.toiletries}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'personal', 'toiletries') } value={this.state.personal.toiletries}  />
           <br />
           <br />
           <label>Hair Care & Cosmetics:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "personal", "hairCareCosmetics") } value={this.state.personal.hairCareCosmetics}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'personal', 'hairCareCosmetics') } value={this.state.personal.hairCareCosmetics}  />
           <br />
           <br />
           <label>Book Supplies:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "personal", "bookSupplies") } value={this.state.personal.bookSupplies}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'personal', 'bookSupplies') } value={this.state.personal.bookSupplies}  />
           <br />
           <br />
           <label>Child Support:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "personal", "childSupport") } value={this.state.personal.childSupport}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'personal', 'childSupport') } value={this.state.personal.childSupport}  />
           <br />
           <br />
           <label>Alimony:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "personal", "alimony") } value={this.state.personal.alimony}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'personal', 'alimony') } value={this.state.personal.alimony}  />
           <br />
           <br />
           <label>Pocket Money:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "personal", "pocketMoney") } value={this.state.personal.pocketMoney}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'personal', 'pocketMoney') } value={this.state.personal.pocketMoney}  />
           <br />
           <br />
           <label>Subscriptions:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "personal", "subscriptions") } value={this.state.personal.subscriptions}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'personal', 'subscriptions') } value={this.state.personal.subscriptions}  />
           <br />
           <br />
           <label>Baby Supplies:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "personal", "babySupplies") } value={this.state.personal.babySupplies}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'personal', 'babySupplies') } value={this.state.personal.babySupplies}  />
           <br />
           <br />
           <label>Pet Supplies:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "personal", "petSupplies") } value={this.state.personal.petSupplies}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'personal', 'petSupplies') } value={this.state.personal.petSupplies}  />
           <br />
           <br />
           <label>Miscellaneous:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "personal", "miscellaneous") } value={this.state.personal.miscellaneous}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'personal', 'miscellaneous') } value={this.state.personal.miscellaneous}  />
           <br />
           <br />
           <label>Other Personal:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "personal", "otherPersonal") } value={this.state.personal.otherPersonal}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'personal', 'otherPersonal') } value={this.state.personal.otherPersonal}  />
           <br />
           <br />
           <label>Other Personal:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "personal", "otherPersonal1") } value={this.state.personal.otherPersonal1}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'personal', 'otherPersonal1') } value={this.state.personal.otherPersonal1}  />
           <br />
           <br />
           <label>Other Personal:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "personal", "otherPersonal2") } value={this.state.personal.otherPersonal2}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'personal', 'otherPersonal2') } value={this.state.personal.otherPersonal2}  />
           <br />
           <br />
-          <button onClick={() => this.setState({section: "transportation"})}>Back </button>
-          <button onClick={() => this.setState({section: "entertainment"})}>Next</button>
+          <button onClick={() => this.setState({section: 'transportation'})}>Back </button>
+          <button onClick={() => this.setState({section: 'entertainment'})}>Next</button>
       </div>
     );
   }
@@ -474,15 +464,15 @@ class MainForm extends Component {
         <h1> Entertainment </h1>
           <br />
           <label>Entertainment:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "entertainment", "groceries") } value={this.state.entertainment.groceries}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'entertainment', 'groceries') } value={this.state.entertainment.groceries}  />
           <br />
           <br />
           <label>Vacation:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "entertainment", "vacation") } value={this.state.entertainment.vacation}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'entertainment', 'vacation') } value={this.state.entertainment.vacation}  />
           <br />
           <br />
-          <button onClick={() => this.setState({section: "personal"})}>Back </button>
-          <button onClick={() => this.setState({section: "debt"})}>Next</button>
+          <button onClick={() => this.setState({section: 'personal'})}>Back </button>
+          <button onClick={() => this.setState({section: 'debt'})}>Next</button>
       </div>
     );
   }
@@ -493,111 +483,115 @@ class MainForm extends Component {
         <h1> Debt </h1>
           <br />
           <label>Car Payment #1:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "debt", "carPayment1") } value={this.state.debt.carPayment1}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'debt', 'carPayment1') } value={this.state.debt.carPayment1}  />
           <br />
           <br />
           <label>Car Payment #2:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "debt", "carPayment2") } value={this.state.debt.carPayment2}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'debt', 'carPayment2') } value={this.state.debt.carPayment2}  />
           <br />
           <br />
           <label>Credit Card #1:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "debt", "creditCard1") } value={this.state.debt.creditCard1}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'debt', 'creditCard1') } value={this.state.debt.creditCard1}  />
           <br />
           <br />
           <label>Credit Card #2:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "debt", "creditCard2") } value={this.state.debt.creditCard2}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'debt', 'creditCard2') } value={this.state.debt.creditCard2}  />
           <br />
           <br />
           <label>Credit Card #3:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "debt", "creditCard3") } value={this.state.debt.creditCard3}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'debt', 'creditCard3') } value={this.state.debt.creditCard3}  />
           <br />
           <br />
           <label>Credit Card #4:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "debt", "creditCard4") } value={this.state.debt.creditCard4}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'debt', 'creditCard4') } value={this.state.debt.creditCard4}  />
           <br />
           <br />
           <label>Credit Card #5:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "debt", "creditCard5") } value={this.state.debt.creditCard5}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'debt', 'creditCard5') } value={this.state.debt.creditCard5}  />
           <br />
           <br />
           <label>Credit Card #6:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "debt", "creditCard6") } value={this.state.debt.creditCard6}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'debt', 'creditCard6') } value={this.state.debt.creditCard6}  />
           <br />
           <br />
           <label>Student Loan #1:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "debt", "studentLoan1") } value={this.state.debt.studentLoan1}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'debt', 'studentLoan1') } value={this.state.debt.studentLoan1}  />
           <br />
           <br />
           <label>Student Loan #2:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "debt", "studentLoan2") } value={this.state.debt.studentLoan2}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'debt', 'studentLoan2') } value={this.state.debt.studentLoan2}  />
           <br />
           <br />
           <label>Student Loan #3:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "debt", "studentLoan3") } value={this.state.debt.studentLoan3}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'debt', 'studentLoan3') } value={this.state.debt.studentLoan3}  />
           <br />
           <br />
           <label>Student Loan #4:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "debt", "studentLoan4") } value={this.state.debt.studentLoan4}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'debt', 'studentLoan4') } value={this.state.debt.studentLoan4}  />
           <br />
           <br />
           <label>Miscellaneous Debt #1:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "debt", "debt1") } value={this.state.debt.debt1}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'debt', 'debt1') } value={this.state.debt.debt1}  />
           <br />
           <br />
           <label>Miscellaneous Debt #2:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "debt", "debt2") } value={this.state.debt.debt2}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'debt', 'debt2') } value={this.state.debt.debt2}  />
           <br />
           <br />
           <label>Miscellaneous Debt #3:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "debt", "debt3") } value={this.state.debt.debt3}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'debt', 'debt3') } value={this.state.debt.debt3}  />
           <br />
           <br />
           <label>Miscellaneous Debt #4:</label>
-          <Input onChange={(event) => this.handleInputChange(event, "debt", "debt4") } value={this.state.debt.debt4}  />
+          <Input onChange={(event) => this.handleInputChange(event, 'debt', 'debt4') } value={this.state.debt.debt4}  />
           <br />
           <br />
-          <button onClick={() => this.setState({section: "entertainment"})}>Back </button>
-          <button onClick= {() => alert("Done!")}>Grade My Budget</button>
+          <button onClick={() => this.setState({section: 'entertainment'})}>Back </button>
+          <button onClick= {() => this.resultRedirect()}>Grade My Budget</button>
       </div>
     );
   }
 
+  resultRedirect() {
+    window.location = '/results';
+  }
 
   renderForm() {
-    if (this.state.section === "pay") {
+
+    if (this.state.section === 'pay') {
       return this.renderPay();
     } 
-    else if(this.state.section === "food"){
+    else if(this.state.section === 'food'){
       return this.renderFood();
     }
-    else if(this.state.section === "clothing"){
+    else if(this.state.section === 'clothing'){
       return this.renderClothing();
     }
-    else if(this.state.section === "utilities"){
+    else if(this.state.section === 'utilities'){
       return this.renderUtilities();
     }
-    else if(this.state.section === "housing"){
+    else if(this.state.section === 'housing'){
       return this.renderHousing();
     }
-    else if(this.state.section === "savings"){
+    else if(this.state.section === 'savings'){
       return this.renderSavings();
     }
-    else if(this.state.section === "medical"){
+    else if(this.state.section === 'medical'){
       return this.renderMedical();
     }
-    else if(this.state.section === "insurance"){
+    else if(this.state.section === 'insurance'){
       return this.renderInsurance();
     }
-    else if(this.state.section === "transportation"){
+    else if(this.state.section === 'transportation'){
       return this.renderTransportation();
     }
-    else if(this.state.section === "personal"){
+    else if(this.state.section === 'personal'){
       return this.renderPersonal();
     }
-     else if(this.state.section === "entertainment"){
+     else if(this.state.section === 'entertainment'){
       return this.renderEntertainment();
     }
-    else if(this.state.section === "debt"){
+    else if(this.state.section === 'debt'){
       return this.renderDebt();
     }else
       return this.renderPay();
@@ -607,9 +601,12 @@ class MainForm extends Component {
 
   render() {
     console.log(this.state);
+    let currentSection = this.state.section;
+
     return (
       <div>
        {this.renderForm()}
+       <Results formData={this.state[currentSection]} />
       </div>
     );
   }
