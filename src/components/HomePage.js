@@ -16,39 +16,18 @@ import {
   Button
 } from 'reactstrap';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
+class HomePage extends Component {
 
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false
-    };
-  }
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
   render() {
     return (
+      const background = {
+        backgroundImage: '../images/girl.jpg(' + imgUrl + ')',
+      };
       <div>
-        <Navbar color="inverse" inverse toggleable>
-          <NavbarToggler right onClick={this.toggle} />
-          <NavbarBrand href="/">reactstrap</NavbarBrand>
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/components/">Components</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">Github</NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
+
         <Jumbotron>
           <Container>
+          <div style={background}></div>;
             <Row>
               <Col>
                 <h1></h1>
@@ -72,4 +51,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default HomePage;
