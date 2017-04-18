@@ -53,13 +53,14 @@ class HomePage extends Component {
                 </div>
                 <p>
                   <Button
+                    className="getStart"
                     tag="a"
                     color="success"
                     size="large"
                     href="http://reactstrap.github.io"
                     target="_blank"
                   >
-                    View Reactstrap Docs
+                    GET STARTED
                   </Button>
                 </p>
               </Col>
