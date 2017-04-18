@@ -1,5 +1,7 @@
 
 import './Nav.css';
+import './HomePage.css';
+
 import React, { Component } from 'react';
 import {
   Collapse,
@@ -19,18 +21,36 @@ import {
 class HomePage extends Component {
 
   render() {
-    return (
-      const background = {
-        backgroundImage: '../images/girl.jpg(' + imgUrl + ')',
-      };
-      <div>
+    let{mode, src, height, width, style, ...props} = this.props;
+    let modes = {
+      'fill': 'cover',
+      'fit': 'contain'
+    };
+    let size = {resizeMode: 'cover' || 'contain'
+    };
+    let defaults = {
+      height: height || 720,
+    };
 
-        <Jumbotron>
-          <Container>
-          <div style={background}></div>;
+    let important = {
+      backgroundImage: `url(./images/smallergirl.jpg)`,
+      backgroundRepeat: 'no-repeat',
+      BackgroundSize: 'cover'
+    };
+
+    return (
+
+      <div>
+        <Jumbotron className="jumboHome">
+        {/*<div id='bkround' className="bkgroun" style={{backgroundImage: `url(./images/girl.jpg)`}}>*/}
+        <div {...props} style={{...style, ...defaults, ...important}}>
+          <Container className="homeContainerOne">
             <Row>
               <Col>
-                <h1></h1>
+                <h1 className="hp-title"><strong>PAY OFF YOUR DEBT</strong></h1>
+                <div className="hp-title-p">
+                <h4 className="hp-title-p">Real solutions to help you pay off your debt and make smarter financial decisions</h4>
+                </div>
                 <p>
                   <Button
                     tag="a"
@@ -45,10 +65,21 @@ class HomePage extends Component {
               </Col>
             </Row>
           </Container>
-        </Jumbotron>
+          </div>
+          </Jumbotron>
       </div>
     );
   }
 }
 
 export default HomePage;
+
+
+
+
+
+
+
+
+
+
