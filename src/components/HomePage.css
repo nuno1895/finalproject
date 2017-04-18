@@ -1,0 +1,17 @@
+.jumboHome{
+	border-radius: 0 !important;
+	background-color: black !important;
+	padding: 0 1em !important;
+	margin-bottom: 0 !important;
+}
+.homeContainerOne{
+	color: white;
+	padding: 15em 18% 0 18% !important;
+	text-align: center;
+}
+.hp-title{
+	font-size: 3.5em;
+}
+.hp-title-p{
+	line-height: 1.5em;
+}

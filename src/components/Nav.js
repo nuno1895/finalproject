@@ -27,6 +27,9 @@
 
 
 import './Nav.css';
+import {
+  NavLink
+} from 'react-router-dom'
 import React, { Component } from 'react';
 import {
   Collapse,
@@ -35,7 +38,6 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
   Container,
   Row,
   Col,
@@ -70,6 +72,10 @@ class App extends Component {
           <NavbarBrand href="/">Our Logo Here</NavbarBrand>
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
+              <NavItem>
+              <NavLink to="/">HOME</NavLink>
+              </NavItem>
+
               <Dropdown className="nav-item" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                 <span
                   onClick={this.toggle}
@@ -80,7 +86,7 @@ class App extends Component {
                   TOOLS
                 </span>
                 <DropdownMenu>
-                  <div onClick={this.toggle}>Custom dropdown item</div>
+                  <div onClick={this.toggle}><NavLink to="/mainform">Budget Grader</NavLink></div>
                   <div onClick={this.toggle}>Custom dropdown item</div>
                   <div onClick={this.toggle}>Custom dropdown item</div>
                   <div onClick={this.toggle}>Custom dropdown item</div>

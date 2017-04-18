@@ -1,5 +1,7 @@
 
 import './Nav.css';
+import './HomePage.css';
+
 import React, { Component } from 'react';
 import {
   Collapse,
@@ -16,42 +18,39 @@ import {
   Button
 } from 'reactstrap';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
+class HomePage extends Component {
 
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false
-    };
-  }
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
   render() {
+    let{mode, src, height, width, style, ...props} = this.props;
+    let modes = {
+      'fill': 'cover',
+      'fit': 'contain'
+    };
+    let size = {resizeMode: 'cover' || 'contain'
+    };
+    let defaults = {
+      height: height || 720,
+    };
+
+    let important = {
+      backgroundImage: `url(./images/smallergirl.jpg)`,
+      backgroundRepeat: 'no-repeat',
+      BackgroundSize: 'cover'
+    };
+
     return (
+
       <div>
-        <Navbar color="inverse" inverse toggleable>
-          <NavbarToggler right onClick={this.toggle} />
-          <NavbarBrand href="/">reactstrap</NavbarBrand>
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/components/">Components</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">Github</NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
-        <Jumbotron>
-          <Container>
+        <Jumbotron className="jumboHome">
+        {/*<div id='bkround' className="bkgroun" style={{backgroundImage: `url(./images/girl.jpg)`}}>*/}
+        <div {...props} style={{...style, ...defaults, ...important}}>
+          <Container className="homeContainerOne">
             <Row>
               <Col>
-                <h1></h1>
+                <h1 className="hp-title"><strong>PAY OFF YOUR DEBT</strong></h1>
+                <div className="hp-title-p">
+                <h4 className="hp-title-p">Real solutions to help you pay off your debt and make smarter financial decisions</h4>
+                </div>
                 <p>
                   <Button
                     tag="a"
@@ -66,10 +65,21 @@ class App extends Component {
               </Col>
             </Row>
           </Container>
-        </Jumbotron>
+          </div>
+          </Jumbotron>
       </div>
     );
   }
 }
 
-export default App;
+export default HomePage;
+
+
+
+
+
+
+
+
+
+
