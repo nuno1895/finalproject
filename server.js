@@ -1,8 +1,6 @@
 var express = require("express");
-var mongojs = require("mongojs");
-var logger = require("morgan");
+var mongojs = require("mongojs");var logger = require("morgan");
 var bodyParser = require('body-parser');
-var spotify = require("spotify");
 var request = require("request");
 
 
@@ -15,11 +13,10 @@ app.use(logger("dev"));
 app.use(bodyParser());
 
 // Database configuration
-var databaseUrl = process.env.MONGODB_URI || "songs_db";
-var collections = ["songs"];
+
 
 // Hook mongojs config to db variable
-var db = mongojs(databaseUrl , collections);
+
 
 // Log any mongojs errors to console
 db.on("error", function(error) {
@@ -46,14 +43,6 @@ if (process.env.NODE_ENV === 'production') {
     next();
   });
 
-
-// songs Routes
-// ======
-  //documentation for mongojs:
-    //https://github.com/mafintosh/mongojs
-
-  
-  
   app.get('*', function(req, res) {
     res.sendFile(path.join(__dirname, './client/public/index.html'));
   });
