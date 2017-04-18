@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './MainForm.css';
 import Input from './Input';
 import Results from './Results';
 
@@ -127,7 +128,7 @@ class MainForm extends Component {
 
   renderPay() {
     return (
-      <div>
+      <div className="debtContainer">
       <h1> Your Pay </h1>
         <br />
         <label>Current Month:</label>
@@ -149,7 +150,7 @@ class MainForm extends Component {
 
   renderFood() {
     return (
-      <div>
+      <div className="debtContainer">
         <h1> Food </h1>
           <br />
           <label>Groceries:</label>
@@ -168,7 +169,7 @@ class MainForm extends Component {
 
   renderClothing() {
     return (
-      <div>
+      <div className="debtContainer">
         <h1> Clothing </h1>
           <br />
           <label>Clothes For Adult:</label>
@@ -191,7 +192,7 @@ class MainForm extends Component {
 
   renderUtilities() {
     return (
-      <div>
+      <div className="debtContainer">
         <h1> Utilities </h1>
           <br />
           <label>Electricity:</label>
@@ -230,7 +231,7 @@ class MainForm extends Component {
 
   renderHousing() {
     return (
-      <div>
+      <div className="debtContainer">
         <h1> Housing </h1>
           <br />
           <label>Mortgage or Rent:</label>
@@ -261,7 +262,7 @@ class MainForm extends Component {
 
   renderSavings() {
     return (
-      <div>
+      <div className="debtContainer">
         <h1> Saving </h1>
           <br />
           <label>Emergency Savings:</label>
@@ -284,7 +285,7 @@ class MainForm extends Component {
 
   renderMedical() {
     return (
-      <div>
+      <div className="debtContainer">
         <h1> Medical </h1>
           <br />
           <label>Medications:</label>
@@ -319,7 +320,7 @@ class MainForm extends Component {
 
   renderInsurance() {
     return (
-      <div>
+      <div className="debtContainer">
         <h1> Insurance </h1>
           <br />
           <label>Life Insurance:</label>
@@ -354,7 +355,7 @@ class MainForm extends Component {
 
   renderTransportation() {
     return (
-      <div>
+      <div className="debtContainer">
         <h1> Transportation </h1>
           <br />
           <label>Gas for Car:</label>
@@ -389,7 +390,7 @@ class MainForm extends Component {
 
   renderPersonal() {
     return (
-      <div>
+      <div className="debtContainer">
         <h1> Personal </h1>
           <br />
           <label>Tution & Eduction:</label>
@@ -460,7 +461,7 @@ class MainForm extends Component {
 
   renderEntertainment() {
     return (
-      <div>
+      <div className="debtContainer">
         <h1> Entertainment </h1>
           <br />
           <label>Entertainment:</label>
@@ -479,7 +480,7 @@ class MainForm extends Component {
 
   renderDebt() {
     return (
-      <div>
+      <div className="debtContainer">
         <h1> Debt </h1>
           <br />
           <label>Car Payment #1:</label>
