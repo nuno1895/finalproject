@@ -33,7 +33,7 @@ class HomePage extends Component {
     };
 
     let important = {
-      backgroundImage: `url(./images/smallergirl.jpg)`,
+      backgroundImage: `url(./images/girl.jpg)`,
       backgroundRepeat: 'no-repeat',
       BackgroundSize: 'cover'
     };
@@ -43,7 +43,7 @@ class HomePage extends Component {
       <div>
         <Jumbotron className="jumboHome">
         {/*<div id='bkround' className="bkgroun" style={{backgroundImage: `url(./images/girl.jpg)`}}>*/}
-        <div {...props} style={{...style, ...defaults, ...important}}>
+        <div {...props} style={{...style, ...defaults, ...modes, ...important}}>
           <Container className="homeContainerOne">
             <Row>
               <Col>
@@ -68,6 +68,9 @@ class HomePage extends Component {
           </Container>
           </div>
           </Jumbotron>
+          <div>
+          <p className="filler">other stuff</p>
+          </div>
       </div>
     );
   }
