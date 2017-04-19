@@ -2,7 +2,6 @@ nav {
 	text-decoration: none;
 
 }
-
 .navBar{
 	font-size: 20px;
 }
@@ -33,5 +32,7 @@ display: block;
 nav a {
 	margin-right: 3.5%;
 	color: rgba(255, 255, 255, 0.5) !important;
-
+}
+.loginNav{
+	margin-right: 3px !important;
 }
