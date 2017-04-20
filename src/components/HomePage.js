@@ -1,7 +1,7 @@
 
 import './Nav.css';
 import './HomePage.css';
-
+import { withReflex, Flex, Box } from 'reflexbox'
 import React, { Component } from 'react';
 import {
   Collapse,
@@ -43,33 +43,74 @@ class HomePage extends Component {
       <div>
         <Jumbotron className="jumboHome">
         {/*<div id='bkround' className="bkgroun" style={{backgroundImage: `url(./images/girl.jpg)`}}>*/}
-        <div {...props} style={{...style, ...defaults, ...modes, ...important}}>
-          <Container className="homeContainerOne">
-            <Row>
-              <Col>
-                <h1 className="hp-title"><strong>PAY OFF YOUR DEBT</strong></h1>
-                <div className="hp-title-p">
-                <h4 className="hp-title-p">Real solutions to help you pay off your debt and make smarter financial decisions</h4>
-                </div>
-                <p>
-                  <Button
-                    className="getStart"
-                    tag="a"
-                    color="success"
-                    size="large"
-                    href="http://reactstrap.github.io"
-                    target="_blank"
-                  >
-                    GET STARTED
-                  </Button>
-                </p>
-              </Col>
-            </Row>
-          </Container>
-          </div>
+          <Flex column>
+            <Box className="homeImage" p={3}>
+              <div {...props} style={{...style, ...defaults, ...modes, ...important}}>
+                <Container className="homeContainerOne">
+                  <Row>
+                    <Col>
+                      <h1 className="hp-title">PAY OFF YOUR DEBT</h1>
+                      <div className="hp-title-p">
+                      <h4 className="hp-title-p">Real solutions to help you pay off your debt and make smarter financial decisions</h4>
+                      </div>
+                      <p>
+                        <Button
+                          className="getStart"
+                          tag="a"
+                          color="success"
+                          size="large"
+                          href="http://reactstrap.github.io"
+                          target="_blank"
+                        >
+                          GET STARTED
+                        </Button>
+                      </p>
+                    </Col>
+                  </Row>
+                </Container>
+              </div>
+            </Box>
+            </Flex>
           </Jumbotron>
           <div>
-          <p className="filler">other stuff</p>
+            <Flex
+              className="stepDiv"
+              align="center"
+              gutter={2}
+              justify="space-between"
+
+            >
+              <Box
+                className="stepBox"
+                col={4}
+                p={2}
+              >
+              <img className="stepImg" src={require('../../public/images/pencil.png')} mode='fit' />
+             
+               <h5> Step: One</h5>
+              </Box>
+              <Box
+                className="stepBox"
+                col={4}
+                p={2}
+              >
+              <img className="stepImg" src={require('../../public/images/computer.png')} mode='fit' />
+
+                <h5>Step: Two</h5>
+              </Box>
+              <Box
+                className="stepBox"
+                col={4}
+                p={2}
+              >
+              <img className="stepImg" src={require('../../public/images/horseshoe.png')} mode='fit' />
+
+              <h5>Step: Three</h5>
+              </Box>
+
+            </Flex>
+            <h3 className="" />
+            <p className="filler">other stuff</p>
           </div>
       </div>
     );
