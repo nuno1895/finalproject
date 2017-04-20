@@ -283,7 +283,7 @@ class MainForm extends Component {
   // renderForm decides what parts of the form to render
 
   render() {
-    console.log(this.state);
+    console.log(this.props.params);
     let currentSection = this.state.section;
 
     return (

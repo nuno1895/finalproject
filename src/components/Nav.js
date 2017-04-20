@@ -86,7 +86,7 @@ class App extends Component {
                   TOOLS
                 </span>
                 <DropdownMenu>
-                  <div onClick={this.toggle}><NavLink to="/mainform">Budget Grader</NavLink></div>
+                  <div onClick={this.toggle}><NavLink to="/mainform/0">Budget Grader</NavLink></div>
                   <div onClick={this.toggle}>Custom dropdown item</div>
                   <div onClick={this.toggle}>Custom dropdown item</div>
                   <div onClick={this.toggle}>Custom dropdown item</div>

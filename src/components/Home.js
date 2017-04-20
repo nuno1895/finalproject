@@ -14,7 +14,7 @@ const Home = (props) => (
 	<div>
 		<Nav />
 		<Route exact path="/" component={HomePage} />
-		<Route exact path="/mainform" component={App} />
+		<Route path="/mainform/:id" component={App} />
 		<Route path="/name" component={Name} />
 		<Route path="/results" component={Results} />
 	</div>
