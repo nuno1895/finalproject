@@ -13,7 +13,7 @@ CREATE TABLE income_frequencies
 (
 	id INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	type VARCHAR(100) NOT NULL
-)
+);
 
 CREATE TABLE incomes
 (
@@ -23,14 +23,14 @@ CREATE TABLE incomes
 	income INTEGER NOT NULL,
 	FOREIGN KEY (income_frequency_id) REFERENCES income_frequencies(id),
 	FOREIGN KEY (user_id) REFERENCES users(id)
-)
+);
 
 CREATE TABLE types
 (
 	id INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	name VARCHAR(255) NOT NULL,
 	total INTEGER
-)
+);
 
 CREATE TABLE budgets
 (
@@ -41,7 +41,7 @@ CREATE TABLE budgets
 	the_date DATE,
 	FOREIGN KEY (user_id) REFERENCES users(id),
 	FOREIGN KEY (type_id) REFERENCES types(id)
-)
+);
 
 CREATE TABLE expenses
 (
@@ -52,7 +52,7 @@ CREATE TABLE expenses
 	the_date DATE,
 	FOREIGN KEY (user_id) REFERENCES users(id),
 	FOREIGN KEY (type_id) REFERENCES types(id)
-)
+);
 
 CREATE TABLE grades
 (
@@ -65,22 +65,4 @@ CREATE TABLE grades
 	FOREIGN KEY (user_id) REFERENCES users(id),
 	FOREIGN KEY (budget_id) REFERENCES budgets(id),
 	FOREIGN KEY (type_id) REFERENCES types(id)
-)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+);
