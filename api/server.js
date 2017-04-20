@@ -1,32 +1,29 @@
 var express = require("express");
-var mongojs = require("mongojs");var logger = require("morgan");
 var bodyParser = require('body-parser');
 var request = require("request");
-
+var CronJob = require('cron').CronJob;
+var logger = require('morgan');
+var mysql = require("mysql");
 
 var PORT = process.env.PORT || 3001;
 var app = express();
 
 // Set the app up with morgan
-app.use(logger("dev"));
-
+app.use(logger('dev'));
 app.use(bodyParser());
 
-// Database configuration
+// Cron Job to check spent v. budget and give a grade every minute
+
+new CronJob('1 * * * * *', function() {
+  console.log('You will see this message every minute');
+}, null, true, 'America/New_York');
 
 
 // Hook mongojs config to db variable
 
 
 // Log any mongojs errors to console
-db.on("error", function(error) {
-  console.log("Database Error:", error);
-});
 
-// Express only serves static assets in production
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
-}
 
 /*
   if we don't do this here then we'll get this error in apps that use this api
@@ -43,9 +40,6 @@ if (process.env.NODE_ENV === 'production') {
     next();
   });
 
-  app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, './client/public/index.html'));
-  });
 
 // Listen on port 3001
   app.listen(PORT, function() {
