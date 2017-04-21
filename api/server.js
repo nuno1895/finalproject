@@ -8,6 +8,13 @@ var mysql = require("mysql");
 var PORT = process.env.PORT || 3001;
 var app = express();
 
+var connection = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'root',
+  password : 'root',
+  database : 'saveup_db',
+});
+
 // Set the app up with morgan
 app.use(logger('dev'));
 app.use(bodyParser());
@@ -16,14 +23,10 @@ app.use(bodyParser());
 
 new CronJob('1 * * * * *', function() {
   console.log('You will see this message every minute');
+  connection.query("INSERT INTO income_frequencies" + " SET ?", {
+          type: "food",
+        }, function(err, res) { console.log('completed!')});
 }, null, true, 'America/New_York');
-
-
-// Hook mongojs config to db variable
-
-
-// Log any mongojs errors to console
-
 
 /*
   if we don't do this here then we'll get this error in apps that use this api
