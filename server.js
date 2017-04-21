@@ -7,12 +7,13 @@ import users from './routes/users'
 var PORT = process.env.PORT || 3001;
 var app = express();
 
-app.use('api/users', users)
 
 // Set the app up with morgan
 app.use(logger("dev"));
 
-app.use(bodyParser());
+app.use(bodyParser.json());
+
+app.use('/api/users', users)
 
 // Database configuration
 

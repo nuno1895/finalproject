@@ -8,7 +8,9 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.1",
     "bootstrap": "^4.0.0-alpha.6",
+    "classnames": "^2.2.5",
     "flexbox-react": "^4.3.2",
+    "lodash": "^4.17.4",
     "react": "^15.5.4",
     "react-addons-css-transition-group": "^15.5.2",
     "react-addons-transition-group": "^15.5.2",
@@ -21,7 +23,8 @@
     "reactstrap": "^4.5.0",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
-    "reflexbox": "^2.2.3"
+    "reflexbox": "^2.2.3",
+    "validator": "^7.0.0"
   },
   "devDependencies": {
     "react-scripts": "^0.9.5"

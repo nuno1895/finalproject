@@ -1,4 +1,5 @@
 import React from'react';
+import classnames from 'classnames';
 
 class SignupForm extends React.Component {
 	constructor(props) {
@@ -7,7 +8,8 @@ class SignupForm extends React.Component {
 			email: '',
 			username: '',
 			password: '',
-			passwordconfirmation: ''
+			passwordconfirmation: '',
+			errors: {}
 		}
 		this.onChange = this.onChange.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
@@ -20,10 +22,16 @@ class SignupForm extends React.Component {
 
 	onSubmit(e) {
 		e.preventDefault();
-		this.props.userSignupRequest(this.state)
+		this.setState({ errors: {} });
+
+		this.props.userSignupRequest(this.state).then(
+			() => {},
+			(err) => this.setState({ errors: err.response.data })
+		);
 	}
 
 	render() {
+		const { errors } = this.state; 
 		return (
 			<form onSubmit={this.onSubmit}>
 				<h1>Join Our Community!</h1>
@@ -37,6 +45,7 @@ class SignupForm extends React.Component {
 						name="email"
 						className="form-control"
 					/>
+					{errors.email && <span className="help-block">{errors.email}</span>} 
 				</div>
 				<div className="form-group">
 					<label className="control-label">Username</label>
