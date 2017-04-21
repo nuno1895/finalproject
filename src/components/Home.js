@@ -8,14 +8,16 @@ import App from '../App'
 import Name from './Name'
 import Results from './Results'
 import HomePage from './HomePage'
-import Login from './Login'
+import LoginPage from './login/Login'
+import SingupPage from './signup/SignupPage'
 
 const Home = (props) => (
 <Router>
 	<div>
 		<Nav />
 		<Route exact path="/" component={HomePage} />
-		<Route exact path="/login" component={Login} />
+		<Route exact path="/signup" component={SingupPage} />
+		<Route exact path="/login" component={LoginPage} />
 		<Route exact path="/mainform" component={App} />
 		<Route path="/name" component={Name} />
 		<Route path="/results" component={Results} />
