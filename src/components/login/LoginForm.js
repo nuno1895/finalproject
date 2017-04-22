@@ -1,61 +1,42 @@
 import React, { Component } from 'react';
 
 class LoginForm extends React.Component {
-	constructor(props) {
-		super(props);
-		// this.state = {
-		// 	email: '',
-		// 	username: '',
-		// 	password: '',
-		// 	passwordconfirmation: '',
-		// 	errors: {}
-		// }
-		this.state = { users: [] };
-		// this.onChange = this.onChange.bind(this);
-		// this.onSubmit = this.onSubmit.bind(this);
-	}
-  componentWillMount(){
-    fetch("/users")
-    .then(res => res.json())
-    .then(users => {
 
-    	debugger;
-      this.setState({
-        users 
-      })
-    })
-  }
+    constructor(props) {
+        super(props);
 
-	// onChange(e) {
-	// 	this.setState({ [e.target.name]: e.target.value });
-	// }
+        this.state = { 
+            users : [],
+            currentUserId : 0
+        };
+    }
 
+    componentDidMount(){
+        return fetch("/users").then(res => res.json()).then(users => {
+            this.setState({
+                users
+            });
+        });
+    }
 
-	// onSubmit(e) {
-	// 	e.preventDefault();
-	// 	this.setState({ errors: {} });
+    handleChange = (event) => {
+        this.setState({currentUserId: event.target.value});
+    }
 
-	// 	this.props.userSignupRequest(this.state).then(
-	// 		() => {},
-	// 		(err) => this.setState({ errors: err.response.data })
-	// 	);
-	// }
+    render() {
+        return (
+            <div>
+            <h1>Who Are You?</h1>
 
-	render() {
-		return (
-			<div>
-			<h1>Who Are You?</h1>
-			<select>
-				{this.state.users.map((user, index) => <option key={index} key={user.id} value={user.id} {...user} />)}
-			</select>
-			</div>
-
-		);
-	}
+            {this.state.currentUserId}
+            <select value={this.state.currentUserId} onChange={this.handleChange}>
+                {this.state.users.map((user, index) => <option key={index} key={user.id} value={user.id} {...user} > {user.username}</option>)}
+            </select>
+            </div>
+        );
+    }
 }
-// LoginForm.propTypes = {
-// 	userSignupRequest: React.PropTypes.func.isRequired
-// }
 
 
- export default LoginForm;
+
+export default LoginForm;
