@@ -8,7 +8,7 @@ import App from '../App'
 import Name from './Name'
 import Results from './Results'
 import HomePage from './HomePage'
-import LoginPage from './login/Login'
+import LoginForm from './login/LoginForm'
 import SingupPage from './signup/SignupPage'
 
 const Home = (props) => (
@@ -17,7 +17,7 @@ const Home = (props) => (
 		<Nav />
 		<Route exact path="/" component={HomePage} />
 		<Route path="/signup" component={SingupPage} />
-		<Route path="/login" component={LoginPage} />
+		<Route path="/login" component={LoginForm} />
 		<Route path="/mainform" component={App} />
 		<Route path="/name" component={Name} />
 		<Route path="/results" component={Results} />

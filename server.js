@@ -5,6 +5,7 @@ var CronJob = require('cron').CronJob;
 var logger = require('morgan');
 var mysql = require("mysql");
 var users = require('./src/routes/users');
+var path = require('path');
 
 var PORT = process.env.PORT || 3001;
 var app = express();
@@ -13,11 +14,11 @@ var app = express();
 
 // app.use(bodyParser.json());
 
-app.use('/api/users', users);
+// app.use('/api/users', users);
 
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, "./index.html"))
-});
+// app.get('/*', (req, res) => {
+//   res.sendFile(path.join(__dirname, "./index.html"))
+// });
 
 
 var connection = mysql.createConnection({
@@ -30,6 +31,19 @@ var connection = mysql.createConnection({
 // Set the app up with morgan
 app.use(logger('dev'));
 app.use(bodyParser.json());
+
+app.get('/users', function(req, res) {
+	
+    var query = "SELECT * FROM users"
+
+    connection.query(query, function(err, users) {
+        res.json(users);
+    });
+});
+/*insert into users 
+	(username, email, password_hash) values ('dummy', 'dummy@dummies.com', '123words'), ('else', 'else@goons.com', '123goons');*/
+
+	
 
 // Cron Job to check spent v. budget and give a grade every minute
 
