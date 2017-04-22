@@ -1,13 +1,18 @@
 var express = require("express");
 var bodyParser = require('body-parser');
 var request = require("request");
+<<<<<<< HEAD:api/server.js
 var CronJob = require('cron').CronJob;
 var logger = require('morgan');
 var mysql = require("mysql");
+=======
+import users from './routes/users'
+>>>>>>> master:server.js
 
 var PORT = process.env.PORT || 3001;
 var app = express();
 
+<<<<<<< HEAD:api/server.js
 var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
@@ -18,6 +23,15 @@ var connection = mysql.createConnection({
 // Set the app up with morgan
 app.use(logger('dev'));
 app.use(bodyParser());
+=======
+
+// Set the app up with morgan
+app.use(logger("dev"));
+
+app.use(bodyParser.json());
+
+app.use('/api/users', users)
+>>>>>>> master:server.js
 
 // Cron Job to check spent v. budget and give a grade every minute
 
