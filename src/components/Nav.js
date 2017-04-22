@@ -78,6 +78,9 @@ class App extends Component {
               <NavItem>
               <NavLink className="loginNav" to="/login">LOG IN</NavLink>
               </NavItem>
+              <NavItem>
+              <NavLink className="loginNav" to="/signup">SIGN UP</NavLink>
+              </NavItem>
               <Dropdown className="nav-item" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                 <span
                   onClick={this.toggle}

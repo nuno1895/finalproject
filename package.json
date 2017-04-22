@@ -9,8 +9,11 @@
     "body-parser": "^1.17.1",
     "bootstrap": "^4.0.0-alpha.6",
     "classnames": "^2.2.5",
+    "cron": "^1.2.1",
     "flexbox-react": "^4.3.2",
     "lodash": "^4.17.4",
+    "morgan": "^1.8.1",
+    "mysql": "^2.13.0",
     "react": "^15.5.4",
     "react-addons-css-transition-group": "^15.5.2",
     "react-addons-transition-group": "^15.5.2",
@@ -24,12 +27,15 @@
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
     "reflexbox": "^2.2.3",
+    "sequelize": "^3.30.4",
     "validator": "^7.0.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
     "react-scripts": "^0.9.5"
   },
   "scripts": {
+    "server": "babel-node server/index.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

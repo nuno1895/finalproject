@@ -16,9 +16,9 @@ const Home = (props) => (
 	<div>
 		<Nav />
 		<Route exact path="/" component={HomePage} />
-		<Route exact path="/signup" component={SingupPage} />
-		<Route exact path="/login" component={LoginPage} />
-		<Route exact path="/mainform" component={App} />
+		<Route path="/signup" component={SingupPage} />
+		<Route path="/login" component={LoginPage} />
+		<Route path="/mainform" component={App} />
 		<Route path="/name" component={Name} />
 		<Route path="/results" component={Results} />
 	</div>

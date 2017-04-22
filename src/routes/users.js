@@ -1,6 +1,6 @@
-import express from 'express'
-import Validator from 'Validator';
-import isEmpty from 'lodash/isEmpty';
+var express = require('express');
+var Validator = require('validator');
+var isEmpty = require('lodash/isEmpty');
 
 let router = express.Router();
 
@@ -33,11 +33,11 @@ function validateInput(data) {
 
 	return {
 		errors,
-		isValid: isEmpty(errors);
-	}
+		isValid: isEmpty(errors)
+	};
 }
 
-router.post('/', (req, res) => {}{
+router.post('/', (req, res) => {
 	const { errors, isValid } = validateInput(req.body);
 
 	if (!isValid) {
@@ -46,4 +46,4 @@ router.post('/', (req, res) => {}{
 
 });
 
-export default router;
+ export default router;

@@ -1,56 +1,70 @@
 var express = require("express");
-var mongojs = require("mongojs");var logger = require("morgan");
 var bodyParser = require('body-parser');
 var request = require("request");
-import users from './routes/users'
+var CronJob = require('cron').CronJob;
+var logger = require('morgan');
+var mysql = require("mysql");
+var users = require('./src/routes/users');
 
 var PORT = process.env.PORT || 3001;
 var app = express();
 
 
-// Set the app up with morgan
-app.use(logger("dev"));
 
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 
-app.use('/api/users', users)
+app.use('/api/users', users);
 
-// Database configuration
-
-
-// Hook mongojs config to db variable
-
-
-// Log any mongojs errors to console
-db.on("error", function(error) {
-  console.log("Database Error:", error);
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, "./index.html"))
 });
 
-// Express only serves static assets in production
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
-}
+
+var connection = mysql.createConnection({
+ host     : 'localhost',
+ user     : 'root',
+ password : 'root',
+ database : 'saveup_db',
+});
+
+// Set the app up with morgan
+app.use(logger('dev'));
+app.use(bodyParser.json());
+
+// Cron Job to check spent v. budget and give a grade every minute
+
+// new CronJob('1 * * * * *', function() {
+//  console.log('You will see this message every minute');
+//  connection.query("INSERT INTO income_frequencies" + " SET ?", {
+//          type: "food",
+//        }, function(err, res) { console.log('completed!')});
+// }, null, true, 'America/New_York');
+
+
+
+
 
 /*
-  if we don't do this here then we'll get this error in apps that use this api
+ if we don't do this here then we'll get this error in apps that use this api
 
-  Fetch API cannot load No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin is therefore not allowed access. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
+ Fetch API cannot load No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin is therefore not allowed access. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
 
-  read up on CORs here: https://www.maxcdn.com/one/visual-glossary/cors/
+ read up on CORs here: https://www.maxcdn.com/one/visual-glossary/cors/
 */
-  //allow the api to be accessed by other apps
-  app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE");
-    next();
-  });
+ //allow the api to be accessed by other apps
 
-  app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, './client/public/index.html'));
-  });
+
+
+
+ app.use(function(req, res, next) {
+   res.header("Access-Control-Allow-Origin", "*");
+   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+   res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE");
+   next();
+ });
+
 
 // Listen on port 3001
-  app.listen(PORT, function() {
-    console.log('🌎 ==> Now listening on PORT %s! Visit http://localhost:%s in your browser!', PORT, PORT);
-  });
+ app.listen(PORT, function() {
+   console.log(':earth_americas: ==> Now listening on PORT %s! Visit http://localhost:%s in your browser!', PORT, PORT);
+ });
